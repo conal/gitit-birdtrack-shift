@@ -1,0 +1,24 @@
+Name:                gitit-birdtrack-shift
+Version:             0.0.0
+Cabal-Version:       >= 1.2
+Synopsis:            Gitit plugin: deconfuse HTML vs inverse-birdtrack
+Category:            Text
+Description:
+  Indent "<foo" so it won't be treated as an inverse birdtrack literate Haskell program.
+Author:              Conal Elliott
+Maintainer:          conal@conal.net
+Copyright:           (c) 2011 by Conal Elliott
+License:             BSD3
+License-File:        COPYING
+Stability:           experimental
+build-type:          Simple
+Package-Url:         http://github.com/conal/gitit-birdtrack-shift
+
+Library
+  hs-Source-Dirs:      src
+  Extensions:
+  Build-Depends:       base<5, containers, gitit >= 0.7.3.12
+  Exposed-Modules:     
+                       Network.Gitit.Plugin.BirdtrackShift
+                       
+  ghc-options:         -Wall
