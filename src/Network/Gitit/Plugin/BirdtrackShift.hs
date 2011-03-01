@@ -23,6 +23,11 @@ type Unop a = a -> a
 plugin :: Plugin
 plugin = PreParseTransform $ return . process
 
+-- TODO: indent only if we're sensitive to bird tracks. Something like
+-- 
+--   plugin = PreParseTransform $ getContext >>= process . ctxBirdTracks
+--   process :: Bool -> Unop String
+
 process :: Unop String
 process = (onLines . map) indentTag  -- (I like semantic editor combinators.)
 
