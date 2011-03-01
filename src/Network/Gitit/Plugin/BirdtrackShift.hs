@@ -13,15 +13,18 @@
 -- Haskell program.
 ----------------------------------------------------------------------
 
-module Network.Gitit.Plugin.BirdtrackShift (plugin) where
+module Network.Gitit.Plugin.BirdtrackShift (plugin,process) where
 
 import Data.Char (isSpace)
 import Network.Gitit.Interface
 
-plugin :: Plugin
-plugin = PreParseTransform $ return . onLines (map indentTag)
-
 type Unop a = a -> a
+
+plugin :: Plugin
+plugin = PreParseTransform $ return . process
+
+process :: Unop String
+process = (onLines . map) indentTag  -- (I like semantic editor combinators.)
 
 onLines :: Unop [String] -> Unop String
 onLines = (unlines .) . (. lines)
