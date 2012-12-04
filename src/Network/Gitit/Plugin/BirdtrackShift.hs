@@ -18,6 +18,7 @@ module Network.Gitit.Plugin.BirdtrackShift (plugin,process) where
 import Data.Char (isSpace)
 import Network.Gitit.Interface
 
+-- | Unary transformation
 type Unop a = a -> a
 
 plugin :: Plugin
