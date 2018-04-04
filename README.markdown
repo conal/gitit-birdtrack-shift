@@ -1,3 +1,7 @@
+**Note:** This repository is subsumed by [gitit-to-blog](https://github.com/conal/gitit-to-blog).
+
+* * * * * * * * * * * * * * * * * * * *
+
 # Purpose
 
 This [Haskell](http://haskell.org)-based project is a simple [gitit](http://gitit.net/) plugin that adds a leading space to lines that start with '<' followed by a non-space character.
